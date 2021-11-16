@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { setCurrency } from './redux/actions/currency';
+import { currencyTypes } from './types/CurrencyTypes';
+
 import './App.css';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const currentCurrency = useSelector(state => state.currency.current_currency);
+
+  const handleClick = () => {
+    dispatch(setCurrency(currencyTypes.rub));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app" onClick={handleClick}>
+      Click me
+      {currentCurrency}
     </div>
   );
 }
