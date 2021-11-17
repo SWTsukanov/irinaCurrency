@@ -4,8 +4,8 @@ import {
 } from "../actions/types";
 
 let initialState = {
-	current_currency: null,
-	currency_rate: null,	
+	currentCurrency: null,
+	currencyRate: null,	
 };
 
 const currencyReducer = (state = initialState, action) => {
@@ -13,12 +13,12 @@ const currencyReducer = (state = initialState, action) => {
 		case SET_CURRENCY:
 			return {
 				...state,
-				current_currency: action.currency,
+				currentCurrency: action.currency,
 			};
 		case SET_CURRENCY_RATE: 
 		return {
 			...state,
-			currency_rate: action.currency_rate,
+			currencyRate: action.currencyRate,
 		};
 		default:
 			return state;

@@ -1,22 +1,18 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { setCurrency } from './redux/actions/currency';
-import { currencyTypes } from './types/CurrencyTypes';
-
 import './App.css';
+import Converter from './components/Converter/Converter';
+import CurrencyCheckbox from './components/CurrencyCheckbox/CurrencyCheckbox';
+import CurrencyRate from './components/CurrencyRate/CurrencyRate';
 
 const App = () => {
-  const dispatch = useDispatch();
-  const currentCurrency = useSelector(state => state.currency.current_currency);
-
-  const handleClick = () => {
-    dispatch(setCurrency(currencyTypes.rub));
-  }
-
   return (
-    <div className="app" onClick={handleClick}>
-      Click me
-      {currentCurrency}
+    <div className="app">
+      <div className='app__container'>
+        <h1>Currency exchange</h1>
+        <CurrencyCheckbox />
+        <CurrencyRate />
+        <Converter />
+      </div>
     </div>
   );
 }
