@@ -1,0 +1,2 @@
+export const SET_CURRENCY = 'SET_CURRENCY';
+export const SET_CURRENCY_RATE = 'SET_CURRENCY_RATE';
