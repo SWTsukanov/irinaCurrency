@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Converter from './components/Converter/Converter';
 import CurrencyCheckbox from './components/CurrencyCheckbox/CurrencyCheckbox';
 import CurrencyRate from './components/CurrencyRate/CurrencyRate';
 
@@ -10,6 +11,7 @@ const App = () => {
         <h1>Currency exchange</h1>
         <CurrencyCheckbox />
         <CurrencyRate />
+        <Converter />
       </div>
     </div>
   );
