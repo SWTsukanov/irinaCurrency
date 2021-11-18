@@ -3,16 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrency } from '../../redux/actions/currency';
 import { currencyTypes } from '../../types/CurrencyTypes';
 import CurrencyRadioButton from './CurrencyRadioButton';
+import { getCurrencyType } from "../../redux/selectors";
 import './CurrencyCheckbox.css';
-import { getCurrencyRate } from "../../api/api";
+import API from "../../api/api";
 
 const CurrencyCheckbox = () => {
     const dispatch = useDispatch();
-    const currentCurrency = useSelector(state => state.currency.currentCurrency);
+    const currentCurrency = useSelector(getCurrencyType);
     
     const handleChange = (val) => {
        dispatch(setCurrency(val));
-       dispatch(getCurrencyRate(val));
+       dispatch(API.getCurrencyRate(val));
     };
 
     const currencyOptions = Object

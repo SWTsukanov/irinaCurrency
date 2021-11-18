@@ -1,0 +1,16 @@
+.converter {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.converter__form {
+    margin-bottom: 20px;
+}
+
+.converter__input {
+    margin-top: 10px;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding: 10px;
+    font-size: inherit;
+}

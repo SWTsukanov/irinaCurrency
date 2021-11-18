@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
 .app {
     height: 100vh;
     max-height: 100vh;
