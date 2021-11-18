@@ -3,7 +3,7 @@ import { currencyTypes } from '../../types/CurrencyTypes';
 import './CurrencyCheckbox.css';
 
 const CurrencyRadioButton = ({ name, value, isChecked, handleChange, label}) => {
-
+    
     const handleRadioChange = e => {
         handleChange(currencyTypes[e.target.id]);
       };
