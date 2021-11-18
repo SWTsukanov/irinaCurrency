@@ -3,4 +3,4 @@ export const getConvertedAmount = (bynAmount, currencyRate) => {
     return (bynAmount * currencyRate).toFixed(3);
 }
 
-export const stringToNumber = (value) => parseInt(value.replace(/\./g, ""), 10);
+export const numberValidator = (value) => value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');

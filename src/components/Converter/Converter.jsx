@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
-import Form from '../Form/Form'
+import Input from '../Input/Input'
 import { getConvertedAmount } from "../../helpers";
 import { getCurrencyRate, getCurrencyType } from '../../redux/selectors';
+import { numberValidator } from "../../helpers";
 import './Converter.css';
 
 const Converter = () => {
@@ -18,13 +19,13 @@ const Converter = () => {
 
     const handleChange = (e) => {
         const value = e.currentTarget.value;
-        setBynAmount(value);
+        setBynAmount(numberValidator(value));
     }
 
     return (
         <div className="converter">
-            <Form onChange={handleChange} value={bynAmount} formName='You give the next ammount of BYN'/>
-            <Form value={convertedAmount} readonly={true} formName={`You get the next ammount of ${currentCurrency || "..."}`}/>
+            <Input onChange={handleChange} value={bynAmount} formName='You give the next ammount of BYN'/>
+            <Input value={convertedAmount} readonly={true} formName={`You get the next ammount of ${currentCurrency || "..."}`}/>
         </div>
       );
 }
